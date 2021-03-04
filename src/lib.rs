@@ -9,15 +9,15 @@ use std::convert::TryInto;
 /// _\**compared to something like JS - efficiency in production is in no way guaranteed._
 
 pub fn csv(input: &str) {
-    let mut rows: Vec<&str> = input.split("\n").collect();
-    let headers: Vec<&str> = rows[0].split(",").collect();
+    let mut rows: Vec<&str> = input.split('\n').collect();
+    let headers: Vec<&str> = rows[0].split(',').collect();
     rows.remove(0);
     let mut values: Vec<Vec<&str>> = vec![];
     for _ in 0..headers.len() {
         values.push(Vec::new())
     }
     for v in rows.clone() {
-        let vals: Vec<&str> = v.split(",").collect();
+        let vals: Vec<&str> = v.split(',').collect();
         for (a, b) in vals.iter().enumerate() {
             values[a].push(b)
         }
@@ -55,7 +55,7 @@ pub fn csv(input: &str) {
     for e in rows.clone() {
         println!("{}", {
             let mut w: Vec<String> = vec![];
-            for (i, x) in e.split(",").enumerate() {
+            for (i, x) in e.split(',').enumerate() {
                 let b = format!("{:1$}", x, max_len[i]);
                 let mut a = String::new();
                 a.push_str(&b.to_string());
