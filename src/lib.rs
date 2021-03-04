@@ -1,7 +1,5 @@
 //! A curation of all of the dojo projects I've attempted from [Coding Dojo](https://ccd-school.de/coding-dojo/). Guaranteed to be unnecessarily complicated and immensely slow.
 
-use std::convert::TryInto;
-
 /// Function to convert a CSV table into a neatly formatted ASCII table. Simple<sup>*</sup> and efficient<sup>**</sup> because it's rust.
 ///
 /// _\*simple if you squint really hard._
@@ -31,7 +29,7 @@ pub fn csv(input: &str) {
         if headers[index].len() > len {
             len = headers[index].len()
         }
-        max_len.push(len.try_into().unwrap())
+        max_len.push(len)
     }
 
     println!("{}", {
