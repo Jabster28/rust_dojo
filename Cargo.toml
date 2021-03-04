@@ -4,6 +4,16 @@ version = "0.1.0"
 authors = ["Jabster28 <justynboyer@gmail.com>"]
 edition = "2018"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "dojo"
+path = "src/lib.rs"
+
+[[bin]]
+name = "test"
+path = "src/test.rs"
+
+[badges]
+maintenance = { status = "as-is" }
 
 [dependencies]

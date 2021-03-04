@@ -1,9 +1,14 @@
+//! A curation of all of the dojo projects I've attempted from [Coding Dojo](https://ccd-school.de/coding-dojo/). Guaranteed to be unnecessarily complicated and immensely slow.
+
 use std::convert::TryInto;
-fn main() {
-    let input = "Name,Street,City,Age
-Peter Pan,Am Hang 5,12345 Einsam,42
-Maria Schmitz,Kölner Straße 45,50123 Köln,43
-Paul Meier,Münchener Weg 1,87654 München,65";
+
+/// Function to convert a CSV table into a neatly formatted ASCII table. Simple<sup>*</sup> and efficient<sup>**</sup> because it's rust.
+///
+/// _\*simple if you squint really hard._
+///
+/// _\**compared to something like JS - efficiency in production is in no way guaranteed._
+
+pub fn csv(input: &str) {
     let mut rows: Vec<&str> = input.split("\n").collect();
     let headers: Vec<&str> = rows[0].split(",").collect();
     rows.remove(0);
